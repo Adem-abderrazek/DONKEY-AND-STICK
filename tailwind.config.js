@@ -9,6 +9,7 @@ module.exports = {
 
       fontFamily: {
         merienda: ['Merienda', 'cursive'],
+        'playfair': ['"Playfair Display"', 'serif'],
       },
       colors: {
         peach: '#fae0c1', 

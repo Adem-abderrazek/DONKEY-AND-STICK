@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MenuSection from "./MenuSection.jsx";
 import Modal from "./Modal.jsx";
 import img from "../../../assets/img.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -350,35 +351,7 @@ const [showModal, setShowModal] = useState(false); // Exemple d'initialisation
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
-        {currentItems.map((item) => (
-          <div onClick={() => handleItemClick(item)}
-            key={item.name}
-            className="flex items-center space-x-6 w-full max-w-xs"
-          >
-            {selectedCategory !== "Drink" ? (
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover"
-              />
-            ) : (
-              <></>
-            )}
-            <div className="flex-1">
-              <h3
-                className="text-xl text-[#B73C21] md:text-2xl font-bold overflow-hidden text-ellipsis whitespace-nowrap"
-                title={item.name} // Shows full text on hover
-              >
-                {item.name}
-              </h3>
-          
-            </div>
-
-            <div className="text-yellow-500 font-bold text-lg md:text-xl">
-              {item.price}$
-            </div>
-          </div>
-        ))}
+      <MenuSection selectedSection={selectedCategory} menuItems={menuItems[selectedCategory]} />
       </div>
 
       <div className="flex justify-center mt-8">
